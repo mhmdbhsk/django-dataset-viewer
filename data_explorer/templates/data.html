@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistik Dataset</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      th {
+        text-align: center !important;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 py-10">
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+      <h1 class="text-2xl font-semibold mb-6">Statistik Dataset Anda</h1>
+      <div class="overflow-x-auto mt-6">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                class="text-center px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Kolom
+              </th>
+              <th
+                class="text-center px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Nilai
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {{ stats|safe }}
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <a
+        href="{% url 'upload_dataset' %}"
+        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-4 inline-block"
+        >Unggah Dataset Lainnya</a
+      >
+    </div>
+  </body>
+</html>
